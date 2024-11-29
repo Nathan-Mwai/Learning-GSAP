@@ -16,22 +16,26 @@ const GsapScrollTrigger = () => {
 
     boxes.forEach((box)=>{
       gsap.to(box, {
-        x: 150,
+        // The math is working well though dont recommend using it
+        x: 150 * (boxes.indexOf(box) + 5),
         rotation:360,
         borderRadius:'100',
         scale:1.5,
         scrollTrigger: {
           trigger: box,
           // How the scroll starts
-          start: 'bottom, bottom',
-          end: 'top 20%',
+          start: 'bottom bottom',
+          end: 'top 10%',
           // This is just to make it smooth
           scrub:true,
         },
         ease: "power1.inOut"
       })
     })
-  },[])
+  },{
+    // This just tells the app when the animation should happen
+    scope:scrollRef,
+  })
   return (
     <main>
       <h1>GsapScrollTrigger</h1>
