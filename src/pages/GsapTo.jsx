@@ -4,8 +4,21 @@ import gsap from "gsap";
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
   useGSAP(() => {
+    // uses ID
     gsap.to('#blue-box',{
+      // Go to where
       x : 250,
+      // This allows it to repeat
+      repeat: -1,
+      // Animation will reverse
+      yoyo: true,
+      // Rotating in a 360 format
+      rotation: 360,
+      // This is for reduces time of box to move around
+      duration:2,
+      //It gives a nice effect of how you want the element to work
+      ease:"elastic",
+
     })
   },[])
 
