@@ -71,7 +71,15 @@ const GsapTimeline = () => {
       </p>
 
       <div className="mt-20 space-y-10">
-        <button onClick={() => {}}>Play/Pause</button>
+        <button onClick={() => {
+          // This is used to pause the button
+          if(timeline.paused()){
+            timeline.play();
+            // this will be used to continue the sequence
+          } else {
+            timeline.pause()
+          }
+        }}>Play/Pause</button>
 
         <div id="yellow-box" className="w-20 h-20 bg-yellow-500 rounded-lg" />
       </div>
